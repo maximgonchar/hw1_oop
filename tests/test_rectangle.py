@@ -1,27 +1,30 @@
-from source.oop_figure import Rectangle, Circle
-
+from source.oop_figure import Rectangle, Circle, Square, Triangle
 
 
 def test_check_rectangle_name():
-    rectangle = Rectangle(3, 5)
-    assert rectangle.name == "Rectangle"
+    assert Rectangle(line_a=3, line_b=5).name == "Rectangle"
 
 
 def test_check_rectangle_angles():
-    rectangle = Rectangle(4, 5)
-    assert rectangle.angles == 4
+    assert Rectangle(line_a=4, line_b=5).angles == 4
 
 
 def test_calc_rectangle_area():
-    rectangle = Rectangle(3, 7)
-    assert rectangle.area() == 21
+    assert Rectangle(line_a=3, line_b=7).area() == 21
 
 
 def test_calc_rectangle_perimetr():
-    rectangle = Rectangle(9, 12)
-    assert rectangle.perimetr() == 42
+    assert Rectangle(line_a=9, line_b=12).perimetr() == 42
+
+
+def test_calc_sum_area_rectangle_square():
+    assert Rectangle(line_a=4, line_b=3).add_area(Square(line_a=10)) == 112
+
 
 def test_calc_sum_area_rectangle_circle():
-    rectangle = Rectangle(4, 3)
-    circle = Circle(5)
-    assert rectangle.add_area(circle) == 90.53981633974483
+    assert Rectangle(line_a=4, line_b=3).add_area(Circle(radius=5)) == 90.53981633974483
+
+
+def test_calc_sum_area_rectangle_triangle():
+    triangle = Triangle(line_a=9, line_b=10, line_c=15, line_h=14)
+    assert Rectangle(line_a=4, line_b=3).add_area(triangle) == 82

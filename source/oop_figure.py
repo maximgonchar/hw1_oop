@@ -1,5 +1,6 @@
 import math
 
+
 class Figure:
     name = None
     area = None

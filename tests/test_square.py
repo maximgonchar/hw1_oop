@@ -1,17 +1,30 @@
-from source.oop_figure import Square, Rectangle
+from source.oop_figure import Triangle, Square, Circle, Rectangle
+
 
 def test_check_square_name():
-    assert Square(10).name == 'Square'
+    assert Square(line_a=10).name == 'Square'
+
 
 def test_check_square_angles():
-    assert Square(2000).angles == 4
+    assert Square(line_a=2000).angles == 4
+
 
 def test_calc_square_area():
-    assert Square(30).area() == 900
+    assert Square(line_a=30).area() == 900
 
 
 def test_calc_square_perimetr():
-    assert Square(10).perimetr() == 40
+    assert Square(line_a=10).perimetr() == 40
+
 
 def test_sum_area_square_rectangle():
-    assert Square(100).add_area(Rectangle(300, 500)) == 160000
+    assert Square(line_a=100).add_area(Rectangle(line_a=300, line_b=500)) == 160000
+
+
+def test_sum_area_square_triangle():
+    triangle = Triangle(line_a=1, line_b=2, line_c=3, line_h=4)
+    assert Square(line_a=25).add_area(triangle) == 629
+
+
+def test_sum_area_square_circle():
+    assert Square(line_a=1).add_area(Circle(radius=17)) == 908.9202768874502
