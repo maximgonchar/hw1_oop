@@ -27,4 +27,5 @@ def test_sum_area_square_triangle():
 
 
 def test_sum_area_square_circle():
-    assert Square(line_a=1).add_area(Circle(radius=17)) == 908.9202768874502
+    sum_area_square_circle = Square(line_a=1).add_area(Circle(radius=17))
+    assert round(sum_area_square_circle, 2) == 908.92

@@ -24,7 +24,8 @@ def test_sum_area_triangle_square():
 
 def test_sum_area_triangle_circle():
     triangle = Triangle(line_a=1, line_b=2, line_c=3, line_h=4)
-    assert triangle.add_area(Circle(radius=20)) == 1260.6370614359173
+    sum_area_triangle_circle = triangle.add_area(Circle(radius=20))
+    assert round(sum_area_triangle_circle, 2) == 1260.64
 
 
 def test_sum_area_triangle_rectangle():

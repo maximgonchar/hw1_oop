@@ -22,7 +22,8 @@ def test_calc_sum_area_rectangle_square():
 
 
 def test_calc_sum_area_rectangle_circle():
-    assert Rectangle(line_a=4, line_b=3).add_area(Circle(radius=5)) == 90.53981633974483
+    sum_area_rect_circle = Rectangle(line_a=4, line_b=3).add_area(Circle(radius=5))
+    assert round(sum_area_rect_circle, 2) == 90.54
 
 
 def test_calc_sum_area_rectangle_triangle():

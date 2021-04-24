@@ -12,11 +12,11 @@ class Figure:
         self.angles = angles
 
     @property
-    def get_name(self):
+    def figure_name(self):
         return self.name
 
     @property
-    def get_angles(self):
+    def figure_angles(self):
         return self.angles
 
     def add_area(self, another_figure):
